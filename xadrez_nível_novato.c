@@ -1,4 +1,36 @@
-//
+// Desafio: nível novato
+//  Objetivo: Imprimir os movimentos de peças de xadrez usando estruturas de repetição (FOR, WHILE, DO-WHILE).
+//  Peças: Torre, Bispo, Rainha
+//  Movimentos:
+//  - Torre: Move 5 casas para a direita (usando FOR)
+//  - Bispo: Move 5 casas na diagonal (cima + direita) (usando WHILE)
+//  - Rainha: Move 8 casas para a esquerda (usando DO-WHILE)
+//  Dica: Use printf para mostrar os movimentos no console.
+//  Exemplo de saída esperada:
+//  Movimento da Torre:
+//  Direita
+//  Direita
+//  Direita
+//  Direita
+//  Direita
+//  Movimento do Bispo:
+//  Cima, Direita
+//  Cima, Direita
+//  Cima, Direita
+//  Cima, Direita
+//  Cima, Direita
+//  Movimento da Rainha:
+//  Esquerda
+//  Esquerda        
+//  Esquerda
+//  Esquerda
+//  Esquerda
+//  Esquerda
+//  Esquerda
+//  Esquerda
+//  Esquerda
+//  Esquerda
+    
 
 #include <stdio.h>
 
