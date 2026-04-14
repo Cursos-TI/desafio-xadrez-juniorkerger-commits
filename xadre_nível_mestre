@@ -1,0 +1,110 @@
+// Projeto: Xadre Nível Mestre
+// Desafio de Xadrez - MateCheck
+// Este código é a implementação do sistema de movimentação das peças de xadrez utilizando funções recursivas e loops aninhados, conforme sugerido para o nível mestre do desafio.
+// O objetivo é simular os movimentos das peças de xadrez, incluindo a Torre, a Rainha, o Bispo e o Cavalo, utilizando técnicas avançadas de programação em C.
+//  As funções recursivas permitem simular os movimentos repetitivos das peças, enquanto os loops aninhados e as condições avançadas controlam a lógica de movimentação, especialmente para o Cavalo.
+// Linguagem: C
+
+#include <stdio.h>
+
+// =========================
+// TORRE com (Recursividade)
+// =========================
+void moverTorre(int casas) {
+    // Caso base: parar a recursão
+    if (casas == 0) {
+        return;
+    }
+
+    printf("Direita\n");
+
+    // Chamada recursiva
+    moverTorre(casas - 1);
+}
+
+
+// =========================
+// RAINHA com (Recursividade)
+// =========================
+void moverRainha(int casas) {
+    if (casas == 0) {
+        return;
+    }
+
+    printf("Cima\n");
+
+    moverRainha(casas - 1);
+}
+
+
+// =========================
+// BISPO com (Recursividade + Loops Aninhados)
+// =========================
+void moverBispo(int casas) {
+    if (casas == 0) {
+        return;
+    }
+
+    // Loop externo (vertical)
+    for (int i = 0; i < 1; i++) {
+        // Loop interno (horizontal)
+        for (int j = 0; j < 1; j++) {
+            printf("Cima\n");
+            printf("Direita\n");
+        }
+    }
+
+    moverBispo(casas - 1);
+}
+
+
+// =========================
+// CAVALO (Loops Complexos)
+// Movimento: 2 para cima + 1 para direita
+// =========================
+void moverCavalo() {
+    int movimentosCima = 0;
+    int movimentosDireita = 0;
+
+    for (int i = 0; i < 3; i++) {
+
+        // Controla movimento vertical (2 casas)
+        if (movimentosCima < 2) {
+            printf("Cima\n");
+            movimentosCima++;
+            continue; // volta para o início do loop
+        }
+
+        // Movimento horizontal (1 casa)
+        if (movimentosDireita < 1) {
+            printf("Direita\n");
+            movimentosDireita++;
+            break; // encerra o loop após completar o movimento
+        }
+    }
+}
+
+
+// =========================
+// FUNÇÃO PRINCIPAL
+// =========================
+int main() {
+
+    int casasTorre = 5;
+    int casasRainha = 5;
+    int casasBispo = 5;
+
+    printf("Movimento da Torre:\n");
+    moverTorre(casasTorre);
+
+    printf("\nMovimento da Rainha:\n");
+    moverRainha(casasRainha);
+
+    printf("\nMovimento do Bispo:\n");
+    moverBispo(casasBispo);
+
+    printf("\nMovimento do Cavalo:\n");
+    moverCavalo();
+
+    return 0;
+}
